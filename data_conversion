@@ -1,0 +1,51 @@
+#============================================================================
+# Date string to Date type
+
+1.0  SELECT to_date('25-DEC-2010', 'DD-MON') from DUAL;
+
+     ORA-01830: date format picture ends before converting entire input string
+
+1.1  SELECT to_date('25-DEC-2010', 'DD-MON-YYYY') from DUAL;
+     
+     TO_DATE('25-DEC-2010','DD-MON-YYYY')
+     25-DEC-10
+
+1.2  SELECT to_date('25-DEC-2010', 'DD-MON-YYYY') from DUAL;
+
+     TO_DATE('25-DEC-2010','DD-MON-YY')
+     25-DEC-10
+     
+ #=============================================================================
+ # Number string to Number type
+ 
+ 2.0 SELECT TO_NUMBER(1234.49,'999999.99') FROM DUAL;
+ 
+     TO_NUMBER(1234.49,'999999.99')
+     1234.49
+     
+ 2.1 SELECT TO_NUMBER(1234.49,'999999.9') FROM DUAL;
+   
+     ORA-01722: invalid number
+     
+ 2.2 SELECT TO_NUMBER(1234.49,'999999.9999') FROM DUAL;
+  
+    TO_NUMBER(1234.49,'999999.9999')
+    1234.49
+ 
+ 2.3  SELECT TO_NUMBER(1234.49,'999.9999') FROM DUAL;
+     
+      ORA-01722: invalid number
+      
+ 2.4  SELECT TO_NUMBER('1234.49','0000.0000') FROM DUAL;
+      
+      TO_NUMBER('1234.49','0000.0000')
+      1234.49
+ 
+ 2.5  SELECT TO_NUMBER('1234.49','00000.0000') FROM DUAL;
+      
+      ORA-01722: invalid number
+ 
+ 2.6  SELECT TO_NUMBER('1234.49','000.0000') FROM DUAL;
+ 
+       ORA-01722: invalid number
+      
