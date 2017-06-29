@@ -1,2 +1,1 @@
-# SQL
-# Simple but useful SQL learning experience
+SQL learning experience
