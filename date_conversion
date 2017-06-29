@@ -1,0 +1,13 @@
+1.0  SELECT to_date('25-DEC-2010', 'DD-MON') from DUAL;
+
+    ORA-01830: date format picture ends before converting entire input string
+
+1.1  SELECT to_date('25-DEC-2010', 'DD-MON-YYYY') from DUAL;
+     
+     TO_DATE('25-DEC-2010','DD-MON-YYYY')
+     25-DEC-10
+
+1.2  SELECT to_date('25-DEC-2010', 'DD-MON-YYYY') from DUAL;
+
+     TO_DATE('25-DEC-2010','DD-MON-YY')
+     25-DEC-10
